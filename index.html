@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヒヤリングシート</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ヒヤリングシート</h1>
+      <p class="subtitle">ご依頼内容をお聞かせください</p>
+    </header>
+
+    <!-- Step 1: カテゴリ選択 -->
+    <section id="step-category" class="step active">
+      <div class="step-header">
+        <span class="step-number">STEP 1</span>
+        <h2>ご依頼のカテゴリを選択してください</h2>
+      </div>
+      <div class="category-cards">
+        <button class="category-card" data-category="crowdfunding">
+          <div class="card-icon">🚀</div>
+          <div class="card-label">クラウドファンディング</div>
+          <div class="card-desc">マクアケ・Campfire・Greenfunding など</div>
+        </button>
+        <button class="category-card" data-category="photography">
+          <div class="card-icon">📷</div>
+          <div class="card-label">撮影・画像制作</div>
+          <div class="card-desc">Amazon・楽天 などのECサイト向け</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Step 2: プラットフォーム選択 -->
+    <section id="step-platform" class="step">
+      <div class="step-header">
+        <span class="step-number">STEP 2</span>
+        <h2 id="platform-title">プラットフォームを選択してください</h2>
+      </div>
+      <div id="platform-cards" class="platform-cards"></div>
+      <button class="btn-back" id="back-to-category">← カテゴリ選択に戻る</button>
+    </section>
+
+    <!-- Step 3: ヒヤリングシート -->
+    <section id="step-form" class="step">
+      <div class="step-header">
+        <span class="step-number">STEP 3</span>
+        <h2 id="form-title">ヒヤリングシート</h2>
+        <p id="form-platform-label" class="platform-badge"></p>
+      </div>
+      <form id="hearing-form" novalidate>
+        <div id="form-fields"></div>
+        <div class="form-actions">
+          <button type="button" class="btn-back" id="back-to-platform">← プラットフォーム選択に戻る</button>
+          <button type="submit" class="btn-submit">送信する</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 完了画面 -->
+    <section id="step-complete" class="step">
+      <div class="complete-box">
+        <div class="complete-icon">✅</div>
+        <h2>送信が完了しました</h2>
+        <p>ご記入ありがとうございます。<br>内容を確認の上、担当者よりご連絡いたします。</p>
+        <button class="btn-submit" id="btn-restart">最初からやり直す</button>
+      </div>
+    </section>
+
+    <!-- 進捗バー -->
+    <div class="progress-bar">
+      <div class="progress-step" data-step="category">カテゴリ</div>
+      <div class="progress-step" data-step="platform">プラットフォーム</div>
+      <div class="progress-step" data-step="form">ヒヤリング</div>
+      <div class="progress-step" data-step="complete">完了</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
